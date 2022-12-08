@@ -22,7 +22,7 @@ function carrito(){
             alert("Se agreró el item " + entrada + " al carrito de compras");
         }
         else if (entrada == producto4){
-            alert("Se agreró el item " + entrada + " al carrito de compras");
+            alert("Se agregó el item " + entrada + " al carrito de compras");
         }
         else{
             alert("Ese producto no está disponible en nuestra tienda");
