@@ -60,6 +60,15 @@ function carrito(){
             }
                 break;
 
+            case "tazon":
+            cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
+                alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
+            if (resultado < cantidad){
+                total += (cantidad*tazon.precio);
+                alert("El valor de su carrito es: $" + total);
+            }
+                break;
+
             case "pijama":
             cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
                 alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
@@ -68,6 +77,25 @@ function carrito(){
                 alert("El valor de su carrito es: $" + total);
             }
                 break;
+
+            case "disfraz":
+             cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
+                 alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
+             if (resultado < cantidad){
+                 total += (cantidad*disfraz.precio);
+                 alert("El valor de su carrito es: $" + total);
+             }
+                break;
+
+            case "pelicula":
+             cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
+                 alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
+             if (resultado < cantidad){
+                 total += (cantidad*pellicula.precio);
+                 alert("El valor de su carrito es: $" + total);
+             }
+                break;
+         
             default: 
              alert("El producto no está en el listado.")
             
@@ -83,7 +111,6 @@ function carrito(){
 function cargarProducto(arr, entrada){
     arr.push(entrada)
 }
-
 console.log(carritoFinal)
 
 //función para el total de la compra
@@ -96,7 +123,10 @@ function sumar(){
 //se simiula la finalización de la compra
 function finalizar(){
     if (entrada == "ok"){
-        alert("Ingrese los numeros de su tarjeta de crédito")}
+        let tarjeta = parseInt(prompt("Ingrese los numeros de su tarjeta"))
+        let cvv = parseInt(prompt("Ingrese el cvv de su tarjeta"))
+        alert("Compra finalizada!")
+    }
         else{
             false
         }
@@ -112,7 +142,11 @@ function productos(nombre, categoria, precio){
 }
 
 const taza = new productos("taza","tazas y tazones", 2000);
+const tazon = new productos("tazon","tazas y tazones", 2500);
 const pijama = new productos ("pijama", "indumentaria", 4000);
+const disfraz = new productos ("disfraz", "indumentaria", 5000);
+const pelicula = new productos ("pelicula", "series y peliculas", 3000);
+
 
 const listado = [taza,pijama]
 
