@@ -1,40 +1,39 @@
-//declaracion de variables
-let producto1 = "taza";
-let producto2 = "poster";
-let producto3 = "llavero";
-let producto4 = "disfraz";
+//variables para la generación del usuario
+let userNombre = prompt("Ingrese su nombre");
+let userTelefono = prompt("Ingrese su telefono");
+let userEmail = prompt("Ingrese su e-mail");
 
-//simulación del index del sitio web
-alert("Estos son los productos de Star Wars que tenemos disponibles: \n 1) Taza \n 2) Poster \n 3) Llavero \n 4) Disfraz");
-
-let entrada = prompt("Ingrese el producto que desea agregar al carrito. Escriba 1 para finalizar la compra.");
-let finalizar = 1;
-
-function carrito(){
-    while (entrada != 1){
-        if (entrada == producto1){
-            alert("Se agreró el item " + entrada + " al carrito de compras");
-        }
-        else if (entrada == producto2){
-            alert("Se agreró el item " + entrada + " al carrito de compras");
-        }
-        else if (entrada == producto3){
-            alert("Se agreró el item " + entrada + " al carrito de compras");
-        }
-        else if (entrada == producto4){
-            alert("Se agregó el item " + entrada + " al carrito de compras");
-        }
-        else{
-            alert("Ese producto no está disponible en nuestra tienda");
-        }
-        entrada = prompt("Ingrese otro producto que desea agregar al carrito. Escriba 1 para finalizar la compra.");
-    }
+function user(nombre,telefono,email) {
+    this.nombre = nombre;
+    this.telefono = telefono;
+    this.email = email
 }
 
-function finalizarCompra(){
-    if (finalizar == "1")
-    alert("Compra finalizada")
+const user1 = new user(userNombre, userTelefono, userEmail);
+const user = [user1];
+
+const agregarUser = [];
+
+function cargarUser(arr,user1){
+    arr.push(user1);
 }
 
-carrito();
-finalizarCompra();
+cargarUser(agregarUser, user1);
+console.log(agregarUser)
+
+//bienvenida al sitio web
+
+function bienvenida (userNombre){
+    alert("Hola " + userNombre + "! Bienvenido/a a Darth Market.");
+}
+
+bienvenida(usaerNombre);
+
+//variables página web
+
+let resultado = 0
+let cantidad = 0
+let total = 0
+
+
+
