@@ -136,6 +136,7 @@ function finalizar(){
 //listado de productos
 
 function productos(nombre, categoria, precio){
+    this.id = productos.length + 1;
     this.nombre = nombre;
     this.categoria = categoria;
     this.precio = parseFloat(precio);
