@@ -1,3 +1,7 @@
+//alert de registrarse
+
+alert("Aún no está registrado en el sitio web! Regístrese para ingresar.")
+
 //variables para la generación del usuario
 let userNombre = prompt("Ingrese su nombre");
 let userTelefono = prompt("Ingrese su telefono");
@@ -10,7 +14,7 @@ function user(nombre,telefono,email) {
 }
 
 const user1 = new user(userNombre, userTelefono, userEmail);
-const user = [user1];
+const users = [user1];
 
 const agregarUser = [];
 
@@ -35,5 +39,86 @@ let resultado = 0;
 let cantidad = 0;
 let total = 0;
 
+//simulación del menu de la web con alert
+alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito.");
+
+//función para buscar y agregar productos
+
+let entrada = prompt("Seleccione un producto para añadir al carrito. Escriba ok para finalizar la compra.");
+
+const carritoFinal = []
+
+function carrito(){
+    while (entrada != "ok") {
+        switch(entrada){
+            case "taza":
+                cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
+                alert("Se agregó al carrito" + cantidad + "unidades del producto");
+            if (resultado <= cantidad){
+                total += (cantidad*taza.precio);
+                alert("El valor de su carrito es: $" + total);
+            }
+                break;
+
+            case "pijama":
+            cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
+                alert("Se agregó al carrito" + cantidad + "unidades del producto");
+            if (resultado < cantidad){
+                total += (cantidad*pijama.precio);
+                alert("El valor de su carrito es: $" + total);
+            }
+                break;
+            default: 
+             alert("El producto no está en el listado.")
+            
+        }
+
+        cargarProducto(carritoFinal, entrada);
+        entrada = prompt("Sellecione otro producto. Ingrese ok para finalizar la compra")
+    }
+}
+
+//Cargar productos al array "carritoFinal"
+
+function cargarProducto(arr, entrada){
+    arr.push(entrada)
+}
+
+console.log(carritoFinal)
+
+//función para el total de la compra
+
+function sumar(){
+    let totalCarrito = total;
+    alert("El total de la compra es por un monto de $" + totalCarrito)
+}
+
+//se simiula la finalización de la compra
+function finalizar(){
+    if (entrada == "ok"){
+        alert("Ingrese los numeros de su tarjeta de crédito")}
+        else{
+            false
+        }
+}
+
+
+//listado de productos
+
+function productos(nombre, categoria, precio){
+    this.nombre = nombre;
+    this.categoria = categoria;
+    this.precio = parseFloat(precio);
+}
+
+const taza = new productos("taza","tazas y tazones", 2000);
+const pijama = new productos ("pijama", "indumentaria", 4000);
+
+const listado = [taza,pijama]
+
+
+carrito();
+sumar();
+finalizar();
 
 
