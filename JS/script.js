@@ -40,7 +40,7 @@ let cantidad = 0;
 let total = 0;
 
 //simulación del menu de la web con alert
-alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito.");
+alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito: \n taza \n pijama");
 
 //función para buscar y agregar productos
 
@@ -53,7 +53,7 @@ function carrito(){
         switch(entrada){
             case "taza":
                 cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
-                alert("Se agregó al carrito" + cantidad + "unidades del producto");
+                alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
             if (resultado <= cantidad){
                 total += (cantidad*taza.precio);
                 alert("El valor de su carrito es: $" + total);
@@ -62,7 +62,7 @@ function carrito(){
 
             case "pijama":
             cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
-                alert("Se agregó al carrito" + cantidad + "unidades del producto");
+                alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
             if (resultado < cantidad){
                 total += (cantidad*pijama.precio);
                 alert("El valor de su carrito es: $" + total);
