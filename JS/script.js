@@ -6,7 +6,7 @@ let userEmail = prompt("Ingrese su e-mail");
 function user(nombre,telefono,email) {
     this.nombre = nombre;
     this.telefono = telefono;
-    this.email = email
+    this.email = email;
 }
 
 const user1 = new user(userNombre, userTelefono, userEmail);
@@ -19,7 +19,7 @@ function cargarUser(arr,user1){
 }
 
 cargarUser(agregarUser, user1);
-console.log(agregarUser)
+console.log(agregarUser);
 
 //bienvenida al sitio web
 
@@ -27,13 +27,13 @@ function bienvenida (userNombre){
     alert("Hola " + userNombre + "! Bienvenido/a a Darth Market.");
 }
 
-bienvenida(usaerNombre);
+bienvenida(userNombre);
 
 //variables página web
 
-let resultado = 0
-let cantidad = 0
-let total = 0
+let resultado = 0;
+let cantidad = 0;
+let total = 0;
 
 
 
