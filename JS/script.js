@@ -33,14 +33,29 @@ function bienvenida (userNombre){
 
 bienvenida(userNombre);
 
+//función constructora de productos
+
+function producto(nombre, categoria, precio){
+    this.nombre = nombre;
+    this.categoria = categoria;
+    this.precio = parseFloat(precio);
+}
+
+const taza = new producto("taza","tazas y tazones", 2000);
+const tazon = new producto("tazon","tazas y tazones", 2500);
+const pijama = new producto ("pijama", "indumentaria", 4000);
+const disfraz = new producto ("disfraz", "indumentaria", 5000);
+const pelicula = new producto ("pelicula", "series y peliculas", 3000);
+
+const listado = [];
+
+listado.push(taza,tazon,pijama,disfraz,pelicula)
+
 //variables página web
 
 let resultado = 0;
 let cantidad = 0;
 let total = 0;
-
-//simulación del menu de la web con alert
-alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito: \n taza \n pijama");
 
 //función para buscar productos
 
@@ -51,12 +66,17 @@ function filtrarNombre(arr, filtro){
 }
 
 let buscarNombre = prompt("Si desea buscar un ítem particular en nuestro listado de productos, escriba el nombre del producto que desee:");
-const filtradoNombre = filtrarNombre(productos, buscarNombre)
-alert("Los siguientes productos coincidieron con tu búsqueda: " + filtradoNombre)
+const filtradoNombre = filtrarNombre(listado, buscarNombre)
+
+alert("Encontramos los siguientes resultados: " + JSON.stringify(filtradoNombre))
+console.log(filtradoNombre)
+
+//simulación del menu de la web con alert
+alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito: \n taza \n tazon \n pijama \n disfraz \n pelicula");
 
 //función para y agregar productos
 
-let entrada = prompt("Seleccione un producto para añadir al carrito. Escriba ok para finalizar la compra.");
+let entrada = prompt("Seleccione un producto para añadir al carrito. Escriba ok para finalizar la compra.").toLowerCase();
 
 const carritoFinal = []
 
@@ -103,7 +123,7 @@ function carrito(){
              cantidad = parseInt(prompt("Cuantas unidades querés comprar?"));
                  alert("Se agregó al carrito " + cantidad + " unidad/es del producto");
              if (resultado < cantidad){
-                 total += (cantidad*pellicula.precio);
+                 total += (cantidad*pelicula.precio);
                  alert("El valor de su carrito es: $" + total);
              }
                 break;
@@ -114,7 +134,7 @@ function carrito(){
         }
 
         cargarProducto(carritoFinal, entrada);
-        entrada = prompt("Sellecione otro producto. Ingrese ok para finalizar la compra")
+        entrada = prompt("Sellecione otro producto. Ingrese ok para finalizar la compra").toLowerCase();
     }
 }
 
@@ -146,25 +166,7 @@ function finalizar(){
 }
 
 
-//listado de productos
-
-function productos(nombre, categoria, precio){
-    this.nombre = nombre;
-    this.categoria = categoria;
-    this.precio = parseFloat(precio);
-}
-
-const taza = new productos("taza","tazas y tazones", 2000);
-const tazon = new productos("tazon","tazas y tazones", 2500);
-const pijama = new productos ("pijama", "indumentaria", 4000);
-const disfraz = new productos ("disfraz", "indumentaria", 5000);
-const pelicula = new productos ("pelicula", "series y peliculas", 3000);
-
-
-const listado = [taza,tazon,pijama,disfraz,pelicula]
-
 // simulación final
-
 carrito();
 sumar();
 finalizar();
