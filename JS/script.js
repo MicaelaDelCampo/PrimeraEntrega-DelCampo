@@ -42,7 +42,19 @@ let total = 0;
 //simulación del menu de la web con alert
 alert("Disponemos de esta lista de articulos. Escriba el nombre del producto para añadirlo a su carrito: \n taza \n pijama");
 
-//función para buscar y agregar productos
+//función para buscar productos
+
+function filtrarNombre(arr, filtro){
+    return arr.filter((producto)=>{
+        return producto.nombre.includes(filtro);
+    })
+}
+
+let buscarNombre = prompt("Si desea buscar un ítem particular en nuestro listado de productos, escriba el nombre del producto que desee:");
+const filtradoNombre = filtrarNombre(productos, buscarNombre)
+alert("Los siguientes productos coincidieron con tu búsqueda: " + filtradoNombre)
+
+//función para y agregar productos
 
 let entrada = prompt("Seleccione un producto para añadir al carrito. Escriba ok para finalizar la compra.");
 
@@ -149,8 +161,9 @@ const disfraz = new productos ("disfraz", "indumentaria", 5000);
 const pelicula = new productos ("pelicula", "series y peliculas", 3000);
 
 
-const listado = [taza,pijama]
+const listado = [taza,tazon,pijama,disfraz,pelicula]
 
+// simulación final
 
 carrito();
 sumar();
