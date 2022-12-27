@@ -69,6 +69,7 @@ let buscarNombre = prompt("Si desea buscar un ítem particular en nuestro listad
 const filtradoNombre = filtrarNombre(listado, buscarNombre)
 
 alert("Encontramos los siguientes resultados: " + JSON.stringify(filtradoNombre))
+/*No vimos como sacar por alert solo una propiedad del objeto a través de un filtro ingresado por prompt*/
 console.log(filtradoNombre)
 
 //simulación del menu de la web con alert
